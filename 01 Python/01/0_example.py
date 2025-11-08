@@ -1,3 +1,8 @@
+print("Hello World!")
+
+age = input("How old are you?")
+print("You are: " + age + " years old!")
+
 def greet_user(name):
     print(f"Hello, {name}! Welcome to the Python script example.")
 
