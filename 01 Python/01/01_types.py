@@ -39,6 +39,8 @@ negative_number = -7
 print("Binary of", negative_number, "is", bin(negative_number))
 # Output: Binary of -7 is -0b111
 
+print(int("0b101", 2)) # 5
+
 # Complex
 # Create complex number with real part 3 and imaginary part 4
 z1 = complex(3, 4)
