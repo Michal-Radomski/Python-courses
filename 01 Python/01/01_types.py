@@ -55,3 +55,70 @@ print("z2 =", z2)
 # Access real and imaginary parts
 print("Real part of z1:", z1.real)
 print("Imaginary part of z1:", z1.imag)
+
+# Variables
+user_iq1 = 190
+print(user_iq1) # 190
+user_age = user_iq1/4
+print(user_age) # 47.5
+
+# constants
+PI = 3.14 # only convention
+print(PI)
+a,b,c=1,2,3
+print(a,b,c) # 1 2 3
+
+# Exercise Augmented Assignment Operator
+counter = 0
+counter += 1
+counter += 1
+counter += 1
+counter += 1
+counter -= 1
+counter *= 2
+print(counter) # 6
+
+# Strings
+first_name = "Michal"
+last_name = "R"
+full_name = first_name + " " + last_name
+print(full_name)
+
+long_string = """
+WOW
+0 0
+---
+"""
+print(long_string)
+
+# String Concatenation
+print('hello' + ' Michal')
+print('hello ' + str(5))
+print("\n")
+
+
+# Type Conversion
+print(type(int(str(100))))
+
+a = str(100)
+b = int(a)
+c = type(b)
+print(c)
+print("\n")
+
+# Escape Sequences
+weather = "\t It\'s \"kind of\" sunny \n Hope you have a good day!"
+print(weather)
+print("\n")
+
+# Formatted Strings
+name = 'Johnny'
+age = 55
+print('Hi' + name + '. You are' + str(age) + ' years old.')
+print(f'Hi {name}. You are {age} years old.') # f -> formatted string
+
+# Python2 Formatted Strings
+print('Hi {}. Your are {} years old.'.format(name, age))
+print('Hi {1}. You are {0} years old.'.format(age, name))
+print('Hi {new_name}. You are {age} years old.'.format(new_name='Sally', age=100))
+print('\n')
