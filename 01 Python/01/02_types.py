@@ -134,3 +134,65 @@ basket.count("Apples")
 # 6. empty the basket
 basket.clear()
 print(basket)  # []
+
+friends = ["Simon", "Patty", "Joy", "Carrie", "Amira", "Chu"]
+new_friend = ["Stanley"]
+friends.extend(new_friend)
+print(sorted(friends))  # ['Amira', 'Carrie', 'Chu', 'Joy', 'Patty', 'Simon', 'Stanley']
+
+print(list(range(1, 100)))
+
+words = ["Hello", "world", "from", "Python"]
+result = " ".join(words)
+print(result)  # Hello world from Python
+
+result = "-".join(words)
+print(result)  # Hello-world-from-Python
+
+# List Unpacking
+a, b, c, *other, d = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    0,
+]  # this will work with set, tuple and normal (as in 1,2,3,4,5) also. and it always store the variables as list, if more than one item, otherwise as int.
+
+print(type(a))
+print(b)  # 2
+print(c)  # 3
+print(other)  # [4, 5, 6, 7, 8, 9]
+print(type(other))
+print(d)  # 0
+
+# * None
+weapons = None
+print(weapons)  # None -> null in JS/TS
+
+# Dictionaries
+my_dict = {"a": [1, 2, 3], "b": "hello", "c": True}
+print(type(my_dict))  # <class 'dict'>
+
+my_list = [
+    {"a": [1, 2, 3], "b": "hello", "c": True},
+    {"a": [4, 5, 6], "b": "bye", "c": False},
+]
+
+print(my_dict["a"])  # [1, 2, 3]
+print(my_dict["a"][1])  # 2
+print(my_list[1]["a"][2])  # 6
+
+# Ordered Dictionary
+from collections import OrderedDict
+
+od = OrderedDict()
+od["apple"] = 1
+od["banana"] = 2
+od["cherry"] = 3
+
+print(list(od.items()))  # [('apple', 1), ('banana', 2), ('cherry', 3)]
