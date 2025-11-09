@@ -197,19 +197,118 @@ od["cherry"] = 3
 
 print(list(od.items()))  # [('apple', 1), ('banana', 2), ('cherry', 3)]
 
-# Dictionary Methods
+
+# * Optional chaining equivalent
+def optional_chain(root, *keys):
+    result = root
+    for key in keys:
+        if isinstance(result, dict):
+            result = result.get(key, None)
+        else:
+            result = getattr(result, key, None)
+        if result is None:
+            break
+    return result
+
+
+obj = {"a": {"b": {"c": 1}}}
+print(optional_chain(obj, "a", "b", "c"))  # outputs 1
+print(optional_chain(obj, "a", "x", "c"))  # outputs None
+
+# * Dictionary Methods
 user = {"name": "john", "sex": "M", "age": 20}
+# * print(user["height"]) # this will give us error, as height doesn't exit in the dictionary.
 
-# print(user["height"]) # this will give us error, as height doesn't exit in the dictionary.
-
-print(user.get("height"))
+print(user.get("height"))  # None
 
 print(
     user.get("height", 6)
 )  # if the key value pair doesn't exit, then it will write the default value.
-print(user)
+print(user)  # 6
 
 # new way to create a dictionary
 user2 = dict(name="saurabh", age=25)
-print(user2)
-print(user2["name"])
+print(user2)  # {'name': 'saurabh', 'age': 25}
+print(user2["name"])  # saurabh
+
+
+user = {"name": "john", "sex": "M", "age": 20}
+
+print("john" in user.items())  # False
+print("sex" in user)  # True
+
+print("john" in user.values())  # True
+print("sex" in user.keys())  # True
+
+print(
+    user.items()
+)  # returns a list containing a tuple for each key value pair -> dict_items([('name', 'john'), ('sex', 'M'), ('age', 20)])
+
+print(user.clear())  # None
+print(user)  # {}
+
+
+user2 = {"name": "pepy", "sex": "F", "age": 45}
+
+print(user2.pop("age"))  # 45
+print(user2)  # {'name': 'pepy', 'sex': 'F'}
+
+print(user2.update({"sex": "M"}))  # None
+print(user2)  # {'name': 'pepy', 'sex': 'M'}
+
+print(user2.update({"size": 32}))  # None
+print(user2)  # {'name': 'pepy', 'sex': 'M', 'size': 32}
+
+print(user2.popitem())  # it randomly pops an item -> ('size', 32)
+print(user2)  # {'name': 'pepy', 'sex': 'M'}
+
+print(user2.keys())  # {'name': 'pepy', 'sex': 'M'}
+print(user2.values())  # {'name': 'pepy', 'sex': 'M'}
+
+
+user3 = {
+    "age": 45,
+    "username": "john",
+    "weapons": ["gun"],
+    "is_active": True,
+    "clan": "army",
+}
+
+user3["weapons"].append("shield")
+user3["weapons"] = user3["weapons"] + ["pistol"]
+print(
+    user3
+)  # {'age': 45, 'username': 'john', 'weapons': ['gun', 'shield', 'pistol'], 'is_active': True, 'clan': 'army'}
+
+# * Dictionary Exercise
+# 1 Create a user profile for your new game.
+# This user profile will be stored in a dictionary with keys: 'age', 'username', 'weapons', 'is_active' and 'clan'
+user_profile = {
+    "age": 0,
+    "username": " ",
+    "weapons": None,
+    "is_active": False,
+    "clan": None,
+}
+
+# 2 iterate and print all the keys in the above user.
+print(user_profile.keys())
+
+# 3 Add a new weapon to your user
+user_profile["weapons"] = "Katana"
+
+# 4 Add a new key to include 'is_banned'. Set it to false
+user_profile.update({"is_banned": False})
+
+# 5 Ban the user by setting the previous key to True
+user_profile["is_banned"] = True
+
+# 6 create a new user2 my copying the previous user and update the age value and username value.
+user2 = user_profile.copy()
+user2.update({"age": 50, "username": "User2"})
+print(
+    user_profile
+)  # {'age': 0, 'username': ' ', 'weapons': 'Katana', 'is_active': False, 'clan': None, 'is_banned': True}
+print(
+    user2
+)  # {'age': 50, 'username': 'User2', 'weapons': 'Katana', 'is_active': False, 'clan': None, 'is_banned': True}
