@@ -122,3 +122,16 @@ print('Hi {}. Your are {} years old.'.format(name, age))
 print('Hi {1}. You are {0} years old.'.format(age, name))
 print('Hi {new_name}. You are {age} years old.'.format(new_name='Sally', age=100))
 print('\n')
+
+# String Indexes
+# [start:stop:stepover (default->1)]
+python = 'I am PYTHON'
+print(python[1:4]) # " am"
+print(python[1:]) # " am PYTHON"
+print(python[:]) # "I am PYTHON"
+print(python[1:100]) # " am PYTHON"
+print(python[-1]) # "N"
+print(python[-4]) #" T"
+print(python[:-3]) # "I am PYT"
+print(python[-3:]) # "HON"
+print(python[::-1]) # "NOHTYP ma I"
