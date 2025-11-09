@@ -259,7 +259,9 @@ print(user2)  # {'name': 'pepy', 'sex': 'M'}
 print(user2.update({"size": 32}))  # None
 print(user2)  # {'name': 'pepy', 'sex': 'M', 'size': 32}
 
-print(user2.popitem())  # it randomly pops an item -> ('size', 32)
+print(
+    user2.popitem()
+)  # it randomly pops an item -> ('size', 32), #* Python 3.7 remove the last item!
 print(user2)  # {'name': 'pepy', 'sex': 'M'}
 
 print(user2.keys())  # {'name': 'pepy', 'sex': 'M'}
