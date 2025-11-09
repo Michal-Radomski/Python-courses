@@ -106,6 +106,14 @@ c = type(b)
 print(c)
 print("\n")
 
+from datetime import datetime
+
+current_year = datetime.now().year
+
+birth_year = input("What year were you born?\n")  # input -> type:string!
+age = current_year - int(birth_year)
+print(f"Your age is {age} years.")
+
 # Escape Sequences
 weather = '\t It\'s "kind of" sunny \n Hope you have a good day!'
 print(weather)
@@ -153,15 +161,15 @@ print(quote)  # "to be or not to be"
 # * Boolean
 is_cool = True
 is_cool = False
-print(bool(-0))
-print(bool(0))
-print(bool(1))
-print(bool(0.5))
-print(bool("0"))
-print(bool("True"))
-print(bool("False"))
-print(bool(False))
-print(bool("any random thing"))
+print(bool(-0))  # False
+print(bool(0))  # False
+print(bool(1))  # True
+print(bool(0.5))  # True
+print(bool("0"))  # True
+print(bool("True"))  # True
+print(bool("False"))  # True
+print(bool(False))  # False
+print(bool("any random thing"))  # True
 
 # * All values are considered "truthy" except for the following, which are "falsy":
 # None
@@ -181,3 +189,14 @@ print(bool("any random thing"))
 # objects for which
 #     obj.__bool__() returns False
 #     obj.__len__() returns 0
+
+# Exercise Password Checker
+
+username = input("Enter your username:\t")
+password = input("Enter you password:\t")
+
+secret_password = len(password) * "*"
+print(secret_password)
+print(
+    f"Hey {username}, your password {secret_password} is {len(password)}  letters long."
+)
