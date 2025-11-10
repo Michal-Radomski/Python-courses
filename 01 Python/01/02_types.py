@@ -366,12 +366,13 @@ print(z)  # 3
 print(my_tuple.count(5))  # 1
 print(my_tuple.index(5))  # 4
 
-# * Sets
+# * Sets -> unordered collection of unique objects
+# Sets in Python are mutable, which means their contents can be changed after creation. You can add, remove, or update elements in a set using methods like add(), remove(), discard(), update(), and clear(). However, while sets themselves are mutable, the elements they contain must be immutable (hashable) types, so mutable objects like lists cannot be elements of a set. This mutability allows sets to be modified dynamically as needed.
 my_set = {1, 2, 3, 4, 5, 5, 5}
 my_set.add(100)
 my_set.add(2)
 print(my_set)  # {1, 2, 3, 4, 5, 100}
-# print(my_set[0])  # we cannot do this, it produces an error, because set is an unordered collection of objects
+# print(my_set[0])  #* we cannot do this, it produces an error, because set is an unordered collection of objects
 print(len(my_set))  # 6
 
 print(5 in my_set)  # True
@@ -391,15 +392,7 @@ print(
 
 my_set = {1, 2, 3, 4, 5}
 your_set = {4, 5, 6, 7, 8, 9, 10}
-
-# .difference()
-# .discard()
-# .difference_update()
-# .intersection()
-# .isdisjoint()
-# .issubset()
-# .issuperset()
-# .union()
+# This is very similar to Venn diagrams.
 
 print("\ndifference")
 print(my_set.difference(your_set))  # {1, 2, 3}
@@ -446,3 +439,14 @@ school = {"Bobby", "Tammy", "Jammy", "Sally", "Danny"}
 # during class, the teachers take attendance and compile it into a list.
 attendance_list = ["Jammy", "Bobby", "Danny", "Sally"]
 print(school.difference(attendance_list))  # {'Tammy'}
+
+# * Ternary operator
+is_cool = False
+coolness = "Very cool" if is_cool else "Not so cool"
+print(coolness)  # Not so cool
+
+print("Yo") if is_cool else print("Po")  # Po
+
+# ---
+print("*" * 10)  # **********
+print((5 + 4) * 10 / 2)  # 45.0
