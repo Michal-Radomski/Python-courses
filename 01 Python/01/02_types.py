@@ -365,3 +365,84 @@ print(z)  # 3
 
 print(my_tuple.count(5))  # 1
 print(my_tuple.index(5))  # 4
+
+# * Sets
+my_set = {1, 2, 3, 4, 5, 5, 5}
+my_set.add(100)
+my_set.add(2)
+print(my_set)  # {1, 2, 3, 4, 5, 100}
+# print(my_set[0])  # we cannot do this, it produces an error, because set is an unordered collection of objects
+print(len(my_set))  # 6
+
+print(5 in my_set)  # True
+print(my_set)  # {1, 2, 3, 4, 5, 100}
+
+print(list(my_set))  # [1, 2, 3, 4, 5, 100]
+
+new_set = my_set.copy()
+print(my_set.clear())  # None
+print(my_set)  # set()
+print(new_set)  # {1, 2, 3, 4, 5, 100}
+
+my_list = [1, 2, 3, 4, 5, 5, 5]
+print(
+    set(my_list)
+)  # this way we can remove the duplicate items from the list -> {1, 2, 3, 4, 5}
+
+my_set = {1, 2, 3, 4, 5}
+your_set = {4, 5, 6, 7, 8, 9, 10}
+
+# .difference()
+# .discard()
+# .difference_update()
+# .intersection()
+# .isdisjoint()
+# .issubset()
+# .issuperset()
+# .union()
+
+print("\ndifference")
+print(my_set.difference(your_set))  # {1, 2, 3}
+print(my_set)  # {1, 2, 3, 4, 5}
+
+print("\ndiscard")
+print(my_set.discard(5))  # None
+print(my_set)  # {1, 2, 3, 4}
+
+print("\ndifference_update")
+print(my_set.difference_update(your_set))  # None
+print(my_set)  # {1, 2, 3}
+
+my_set = {1, 2, 3, 4, 5}
+
+print("\nintersection")
+print(my_set.intersection(your_set))  # {4, 5}
+print(my_set & your_set)  # {4, 5}
+
+print("\nisdisjoint")
+print(my_set.isdisjoint(your_set))  # False
+my_set = {1, 2, 3}
+print(my_set.isdisjoint(your_set))  # True
+
+print("\nissubset")
+print(my_set.issubset(your_set))  # False
+my_set = {4, 6, 8}
+print(my_set.issubset(your_set))  # True
+
+print("\nissuperset")
+print(my_set.issuperset(your_set))  # False
+print(your_set.issuperset(my_set))  # True
+
+print("\nunion")
+my_set = {1, 2, 3, 4, 5}
+print(my_set.union(your_set))  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+# or
+print(my_set | your_set)  # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+# Exercise
+# You are working for the school Principal. We have a database of school students:
+school = {"Bobby", "Tammy", "Jammy", "Sally", "Danny"}
+
+# during class, the teachers take attendance and compile it into a list.
+attendance_list = ["Jammy", "Bobby", "Danny", "Sally"]
+print(school.difference(attendance_list))  # {'Tammy'}
