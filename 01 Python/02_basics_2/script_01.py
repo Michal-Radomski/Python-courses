@@ -230,3 +230,68 @@ for i, char in enumerate([1, 2, 3]):
 for i, char in enumerate(range(100)):
     if char == 50:
         print(f"index of 50 is: {i}")
+
+# * While loops
+# i = 0
+# while i < 5:
+#     print(i)
+#     i += 1
+#     break
+# else:
+#     print("done")
+
+# while True:
+#     response = input("say something: ")
+#     if response == "bye":
+#         break
+
+i = 0
+while i < 50:
+    print(i, end="\t")
+    i += 1
+else:
+    print("\nDone with all the work.")
+print()
+
+my_list = [1, 2, 3]
+i = 0
+while i < len(my_list):
+    print(my_list[i])
+    i += 1
+# 1
+# 2
+# 3
+print()
+
+while True:
+    response = input("Say Something: ")
+    if response == "bye":
+        break
+
+# * Break, Continue, Pass
+
+my_list = [1, 2, 3]
+i = 0
+while i < len(my_list):
+    print(my_list[i])
+    i += 1
+    continue
+print()
+# 1
+# 2
+# 3
+
+i = 0
+while i < len(my_list):
+    print(my_list[i])
+    i += 1
+    break
+print()
+# 1
+
+i = 0
+while i < len(my_list):
+    i += 1
+    pass  # Does nothing!
+
+print("No error")  # No error
