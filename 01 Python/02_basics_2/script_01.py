@@ -172,3 +172,61 @@ for item in user.items():
 # age 45
 # name john
 # size 10
+
+# Write a program to find the sum of items in the list
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+counter = 0
+for item in my_list:
+    counter += item
+
+print(counter)  # 55
+
+# * Range -> stop is omitted!
+print(range(100))  # range(0, 100)
+print(list(range(100)))  # [0, 1, ..., 99]
+
+for _ in range(1, 5):
+    print(_)  # 1 2 3 4
+
+print("\n")
+for _ in range(1, 10, 2):
+    print(_)  # 1 3 5 7 9
+
+print("\n")
+for _ in range(10, 0, -1):
+    print(_)  # 10 ... 1
+
+# * Enumerate()
+# we can pass any iterable to enumerate, and it will store them as separate tuple with index starting from 0.
+# for i in enumerate("Hello World"):
+#     print(i)
+
+# for i, j in enumerate([1, 2, 3, 4]):
+#     print(i, j)
+
+# for i in enumerate((1, 2, 3, 4, 5)):
+#     print(i)
+
+# print(list(item for item in enumerate("123456789")))
+# print((i * i for i in range(8)))
+
+# print(list(enumerate("123456789")))
+
+# print(dict(list(enumerate((i * i for i in range(1, 11)), 1))))
+
+# Enumerate()
+for i, char in enumerate("Hello"):
+    print(i, char)
+# 0 H
+# 1 e
+# 2 l
+# 3 l
+# 4 o
+
+for i, char in enumerate([1, 2, 3]):
+    print(i, char)
+
+for i, char in enumerate(range(100)):
+    if char == 50:
+        print(f"index of 50 is: {i}")
