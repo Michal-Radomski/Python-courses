@@ -33,10 +33,10 @@ def highest_even(li):
     for item in li:
         if not item % 2 and item not in evens:
             evens.append(item)
-    return max(evens)
+    return max(evens)  # max() build-in function!
 
 
-print(highest_even([10, 2, 3, 4, 8, 11]))  # 10
+print(highest_even([2, 10, 2, 3, 4, 8, 11]))  # 10
 
 print(say_hello)  # eg <function say_hello at 0x784e269da340>
 
@@ -155,3 +155,29 @@ def super_func(name, *args, i="hi", **kwargs):
 print(super_func("Mich", 1, 2, 3, 4, 5, i="hello", num1=5, num2=10))
 # hello Mich
 # 30
+
+# * Walrus Operator -> :=
+a = "helloooooooooo"
+
+if (n := len(a)) > 10:
+    print(f"too long {n} elements")  # too long 14 elements
+
+while (n := len(a)) > 1:
+    print(n)
+    a = a[:-1]
+# 14
+# 13
+# 12
+# 11
+# 10
+# 9
+# 8
+# 7
+# 6
+# 5
+# 4
+# 3
+# 2
+# h
+
+print(a)
