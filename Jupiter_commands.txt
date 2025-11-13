@@ -1,0 +1,9 @@
+conda activate
+jupyter notebook
+conda deactivate
+
+conda install jupyter
+conda info
+conda update --all
+
+conda list -n base
