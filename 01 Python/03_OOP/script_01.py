@@ -29,7 +29,7 @@ class PlayerCharacter:
     def run(self):
         print("Run")
 
-    def printSelf(self):
+    def print_self(self):
         print(self)
 
 
@@ -44,7 +44,7 @@ print(player2.age)
 player1.run()
 print(player2.attack)
 # print(player1.attack) #* Error
-player1.printSelf()  # <__main__.PlayerCharacter object at 0x741eae193860>
+player1.print_self()  # <__main__.PlayerCharacter object at 0x741eae193860>
 print(player1)  # <__main__.PlayerCharacter object at 0x703d7ed93a10>
 
 
@@ -87,7 +87,7 @@ class PlayerCharacter:
     # Class Object Attribute
     membership = True
 
-    def __init__(self, name, age):
+    def __init__(self, name="anonymous", age=0):
         if age > 18:
             self.name = name
             self.age = age
@@ -97,6 +97,69 @@ class PlayerCharacter:
 
 
 player1 = PlayerCharacter("Tom", 20)
+player2 = PlayerCharacter(age=20)
 print(player1.shout())
 # My name is Tom
 # None
+print(player2.name)  # anonymous
+
+
+# * Exercise
+class Cat:
+    species = "mammal"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# Answers:
+# 1 Instantiate the Cat object with 3 cats.
+cat1 = Cat("cat1", 5)
+cat2 = Cat("Cat2", 7)
+cat3 = Cat("Cat3", 3)
+
+
+# 2 Create a function that finds the oldest cat.
+def oldest_cat(*args):
+    return max(args)
+
+
+# 3 Print out: "The oldest cat is x years old.".
+print(
+    f"Oldest Cat is {oldest_cat(cat1.age, cat2.age, cat3.age)} years old."
+)  # Oldest Cat is 7 years old.
+
+
+# * @classmethod and @staticmethod
+class PlayerCharacter:
+    membership = True
+
+    def __init__(self, name, age):
+        if self.membership:
+            self.name = name
+            self.age = age
+
+    def run(self):
+        print(f"run {self.name}")
+
+    # Not often used!
+    @classmethod  # we can use this method without instantiating the class
+    def add_things(cls, n1, n2):  # cls -> class, instead of self
+        return cls("Jojo", n1 + n2)
+
+    # Not often used!
+    @staticmethod  # same as @classmethod, only thing is we don't pass the class as argument, and hence can't use its attribute
+    def add_things2(n1, n2):
+        return n1 + n2
+
+
+player1 = PlayerCharacter.add_things(4, 5)
+# Jojo
+# 9
+print(player1.name)  # ---
+print(player1.age)  # ---
+print(player1.membership)  # True
+
+print(PlayerCharacter.add_things2(45, 5))  # 50
+# print(player2.membership)     # gives error
