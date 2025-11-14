@@ -20,7 +20,7 @@ print(type(BigObject))  # <class 'type'>
 print(type(obj1))  # <class '__main__.BigObject'>
 
 
-# Creating Our Own Objects
+# * Creating Our Own Objects
 class PlayerCharacter:
     def __init__(self, name, age):  # Construction method
         self.name = name
@@ -43,5 +43,60 @@ print(player1.age)
 print(player2.age)
 player1.run()
 print(player2.attack)
+# print(player1.attack) #* Error
 player1.printSelf()  # <__main__.PlayerCharacter object at 0x741eae193860>
 print(player1)  # <__main__.PlayerCharacter object at 0x703d7ed93a10>
+
+
+# * Attributes and Methods
+class PlayerCharacter:
+    membership = True  # Class object attribute, its an attribute of PlayerCharacter. It is a static attribute
+
+    def __init__(self, name, age):
+        if self.membership:  # or we can write: 'if PlayerCharacter.membership :'
+            self.name = name  # these are dynamic attribute
+            self.age = age
+
+    def run(self):
+        print(f"run {self.name}")
+        # print(f"run {PlayerCharacter.name})   # we cannot do this
+
+    def shout(self):
+        print(f"My name is {self.name}")
+
+
+player1 = PlayerCharacter("Rohan", 22)
+player2 = PlayerCharacter("Mohan", 98)
+
+print(player1.name)
+print(
+    player1.membership
+)  # each of the class instance can assess the class object attribute -> True
+print(player1.run())
+# run Rohan
+# None
+player1.run()  # run Rohan
+player1.shout()  # My name is Rohan
+
+# help(list)
+
+# * __init__
+
+
+class PlayerCharacter:
+    # Class Object Attribute
+    membership = True
+
+    def __init__(self, name, age):
+        if age > 18:
+            self.name = name
+            self.age = age
+
+    def shout(self):
+        print(f"My name is {self.name}")
+
+
+player1 = PlayerCharacter("Tom", 20)
+print(player1.shout())
+# My name is Tom
+# None
