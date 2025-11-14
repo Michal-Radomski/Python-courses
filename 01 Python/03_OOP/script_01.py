@@ -163,3 +163,18 @@ print(player1.membership)  # True
 
 print(PlayerCharacter.add_things2(45, 5))  # 50
 # print(player2.membership)     # gives error
+
+
+# * Encapsulation and Abstraction
+class PlayerCharacter:
+    def __init__(self, name, age):
+        if age > 18:
+            self.name = name
+            self.age = age
+
+    def speak(self):
+        print(f"My name is {self.name} and I am {self.age} years old.")
+
+
+player1 = PlayerCharacter("Tom", 20)
+player1.speak()  # My name is Tom and I am 20 years old.
