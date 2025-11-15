@@ -349,5 +349,52 @@ print(len(super_list1))  # 1000
 
 super_list1.append(5)
 print(super_list1[0])  # 5
+# print(super_list1[1])  # Error
 print(issubclass(SuperList, list))  # True
 print(issubclass(list, object))  # True
+print(issubclass(SuperList, object))  # True
+
+
+# Multiple Inheritance
+class User:
+    def signed_in(self):
+        print("User is logged in.")
+
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f"{self.name} is attacking with {self.power} power.")
+
+
+class Archer(User):
+    def __init__(self, name, arrows):
+        self.name = name
+        self.arrows = arrows
+
+    def attack(self):
+        print(f"{self.name} is attacking with {self.arrows} arrows.")
+
+    def check_arrows(self):
+        print(f"{self.arrows} arrows left.")
+
+
+# notice the order, in that order only it will give preference
+class HybridAttacker(Wizard, Archer):
+    def __init__(self, name, power, arrows):
+        Wizard.__init__(self, name, power)
+        Archer.__init__(self, name, arrows)
+
+
+hbot = HybridAttacker("Hydro", 50, 300)
+hbot.attack()  # Hydro is attacking with 50 power.
+
+print(hbot.name)  # Hydro
+print(hbot.power)  # 50
+print(hbot.arrows)  # 300
+
+hbot.check_arrows()  # 300 arrows left.
+hbot.signed_in()  # User is logged in.
