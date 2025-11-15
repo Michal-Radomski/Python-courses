@@ -32,7 +32,7 @@ print(list(map(multiply_by2, my_list)))  # [10, 16, 18]
 print(my_list)  # [5, 8, 9]
 
 """
-notice that map is not modifying anything, and creating a new list. 
+notice that map is not modifying anything, and creating a new list.
 it is also using separate data and function to work upon them.
 it's a nice concept of Functional programming and pure function.
 """
@@ -147,9 +147,42 @@ print(a)  # [(10, -1), (0, 2), (5, 3), (4, 4)]
 my_list = [5, 4, 3]
 
 print(list(map(lambda item: item * item, my_list)))  # [25, 16, 9]
+print(list(map(lambda item: item**2, my_list)))  # [25, 16, 9]
 
 # List Sorting
 a = [(0, 2), (4, 3), (9, 9), (10, -2)]
 
 a.sort(key=lambda x: x[1])
 print(a)  # [(10, -2), (0, 2), (4, 3), (9, 9)]
+
+# * List Comprehensions
+# * Set and Dictionary Comprehension
+my_list = []
+
+for item in "hello":
+    my_list.append(item)
+
+print(my_list)  # ['h', 'e', 'l', 'l', 'o']
+
+my_list1 = [item for item in "Saurabh"]
+print(my_list1)  # ['S', 'a', 'u', 'r', 'a', 'b', 'h']
+
+my_list2 = [num**2 for num in range(1, 11)]
+print(my_list2)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# only even squares
+my_set = {num**2 for num in range(1, 11) if num**2 % 2 == 0}
+print(my_set)  # {64, 100, 4, 36, 16}
+# remember that set don't contain duplicate values
+
+my_dict = {num: num**2 for num in range(1, 11)}
+print(my_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+
+
+random_dict = {"a": 1, "b": 2, "c": 3, "d": 4}
+
+my_new_dict = {k: v**2 for k, v in random_dict.items()}
+print(my_new_dict)  # {'a': 1, 'b': 4, 'c': 9, 'd': 16}
+
+my_new_dict2 = {k: v**2 for k, v in random_dict.items() if v % 2 == 0}
+print(my_new_dict2)  # {'b': 4, 'd': 16}
