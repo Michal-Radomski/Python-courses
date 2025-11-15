@@ -220,3 +220,64 @@ my_pets.walk()
 # "Simon" is just walking around
 # "Sally" is just walking around
 # "Chilli" is just walking around
+
+
+# * Super
+class User:
+    def __init__(self, email):
+        self.email = email
+
+    def signed_in(self):
+        print("User is logged in.")
+
+    def attack(self):
+        print("Do nothing.")
+
+
+class Wizard(User):
+    def __init__(self, name, power, email):
+        self.name = name
+        self.power = power
+        # same as using the below command, it does not take 'self' parameter
+        super().__init__(email)
+        # User.__init__(self, email)
+
+    def attack(self):
+        print(f"{self.name} is attacking with {self.power} power.")
+
+
+wizard1 = Wizard("John", 50, "john@gmail.com")
+print(wizard1.email)
+
+
+# * Object Introspection
+class User:
+    def __init__(self, email):
+        self.email = email
+
+    def sign_in(self):
+        print("logged in")
+
+
+# Sub Class/ Child Class/ Derived Class
+class Wizard(User):
+    def __init__(self, name, power, email):
+        super().__init__(email)
+        # same as: User.__init__(self, email)
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f"Attacking with power of {self.power}")
+
+
+wizard1 = Wizard("Merlin", 60, "merlin@gmail.com")
+print(dir(wizard1))
+# ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'attack', 'email', 'name', 'power', 'sign_in']
+
+
+"""
+It gives us all the methods and attributes that the item has access to.
+But we get this functionality with IDEs build in, when we type item or instance name dot for eg. list.
+And then IDE will pop a window with all the methods and attributes it has access to.
+"""
