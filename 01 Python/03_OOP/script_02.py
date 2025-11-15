@@ -281,3 +281,73 @@ It gives us all the methods and attributes that the item has access to.
 But we get this functionality with IDEs build in, when we type item or instance name dot for eg. list.
 And then IDE will pop a window with all the methods and attributes it has access to.
 """
+
+
+# * Dunder Methods
+class ActionFig:
+    def __init__(self, color, age):
+        self.color = color
+        self.age = age
+        self.my_dict = {"name": "Yoyo", "has_pets": "Dog"}
+
+    def __str__(self):
+        return f"{self.color}"
+
+    def __len__(self):
+        return 5
+
+    def __call__(self):
+        return "hello...??"
+
+    def __getitem__(self, i):
+        return self.my_dict[i]
+
+    def __del__(self):
+        return "deleted"
+
+
+hulk = ActionFig("red", 0)
+
+print(hulk.__str__())  # red
+print(hulk)  # red
+print(str(hulk))  # red
+print(str("Printing an string"))  # Printing an string
+
+print(hulk.__len__())  # 5
+print(len(hulk))  # 5
+print(len("0123456789"))  # 10
+
+print(hulk.__call__())  # hello...??
+# with call method, we get this special power to call a method with curly braces -> hello...??
+print(hulk())
+
+print(hulk.__getitem__("has_pets"))  # Dog
+# it is same as print(hulk), it prints the memory location of the object
+print(hulk.__repr__())  # <__main__.ActionFig object at 0x7d20fe40a000>
+
+print(hulk.__del__())  # deleted
+del hulk  # this deletes the variable passed, but as we have modified it, it won't delete the instance now
+
+a = 5
+del a
+# print(a) # Error
+"""
+this will give us error, because we have deleted the variable a, 
+because we haven't modified the base class __del__ method, so its performing normal
+"""
+
+
+# * Exercise
+class SuperList(list):
+
+    def __len__(self):
+        return 1000
+
+
+super_list1 = SuperList()
+print(len(super_list1))  # 1000
+
+super_list1.append(5)
+print(super_list1[0])  # 5
+print(issubclass(SuperList, list))  # True
+print(issubclass(list, object))  # True
