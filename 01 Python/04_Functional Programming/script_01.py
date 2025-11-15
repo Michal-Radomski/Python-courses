@@ -1,4 +1,8 @@
 # Functional Programming
+from functools import reduce
+import functools
+
+
 # * Pure Functions
 def multiply_by2(li):
     new_li = []
@@ -60,7 +64,6 @@ print(
 print(li1, set1, tuple1)  # [1, 2, 3] {4, 5, 6} (7, 8, 9)
 
 # * Reduce()
-from functools import reduce
 
 
 def accumulator(acc, item):
@@ -116,3 +119,37 @@ def accumulator(acc, item):
 
 
 print(reduce(accumulator, (my_numbers + scores)))  # 456
+
+# * Lambda Expressions
+my_list = [1, 2, 3, 4, 5]
+
+print(list(map(lambda item: item * 2, my_list)))  # [2, 4, 6, 8, 10]
+
+print(list(filter(lambda item: item % 2 != 0, my_list)))  # [1, 3, 5]
+
+print(functools.reduce(lambda acc, item: item + acc, my_list))  # 15
+
+"""
+syntax:
+lambda param: action(param)
+it automatically returns the action taken,
+it do not have any name, doesn't get stored in the memory.
+and so used only once.
+and behaves exactly like a function.
+"""
+
+a = [(0, 2), (4, 4), (10, -1), (5, 3)]
+
+a.sort(key=lambda x: x[1], reverse=False)
+print(a)  # [(10, -1), (0, 2), (5, 3), (4, 4)]
+
+# * Exercise
+my_list = [5, 4, 3]
+
+print(list(map(lambda item: item * item, my_list)))  # [25, 16, 9]
+
+# List Sorting
+a = [(0, 2), (4, 3), (9, 9), (10, -2)]
+
+a.sort(key=lambda x: x[1])
+print(a)  # [(10, -2), (0, 2), (4, 3), (9, 9)]
