@@ -1,4 +1,4 @@
-# OOP
+# OOP 1/2
 class BigObject:  # Class
     # code
     pass
@@ -22,7 +22,7 @@ print(type(obj1))  # <class '__main__.BigObject'>
 
 # * Creating Our Own Objects
 class PlayerCharacter:
-    def __init__(self, name, age):  # Construction method
+    def __init__(self, name, age):  # Construction method (Dunder method)
         self.name = name
         self.age = age
 
