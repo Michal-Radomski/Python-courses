@@ -46,3 +46,42 @@ print(greet)
 
 greet = hello
 print(greet)  # <function my_decorator.<locals>.wrap_func at 0x773ff7591080>
+
+
+def bye():
+    print("See you later")
+
+
+a = my_decorator(bye)
+a()
+# ***********
+# See you later
+# ***********
+
+
+my_decorator(bye)()
+# ***********
+# See you later
+# ***********
+
+
+# * Decorators2
+def my_decorator(func):
+    def wrap_func(*args, **kwargs):
+        func(*args, **kwargs)
+
+    return wrap_func
+
+
+@my_decorator
+def hello(name, age):
+    print(f"Hello {name}, your age is {age}.")
+
+
+@my_decorator
+def logged_in(username):
+    print(f"{username} is logged in.")
+
+
+hello("Mich", 21)  # Hello Mich, your age is 21
+logged_in("Mich")  # Mich is logged in.
