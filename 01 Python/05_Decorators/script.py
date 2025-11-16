@@ -1,4 +1,7 @@
 # Decorators
+from time import time
+
+
 # * Higher Order Function
 # Higher Order Function (HOC) is a function which returns another function, or accepts another function
 def greet(func):
@@ -85,3 +88,23 @@ def logged_in(username):
 
 hello("Mich", 21)  # Hello Mich, your age is 21
 logged_in("Mich")  # Mich is logged in.
+
+
+# * Exercise
+def performance(fn):
+    def wrap_fn(*args, **kwargs):
+        t1 = time()
+        fn(*args, **kwargs)
+        t2 = time()
+        print(f"It took {t2-t1} sec")
+
+    return wrap_fn
+
+
+@performance
+def long_fn():
+    for i in range(10000000):
+        i * 5
+
+
+long_fn()  # It took 0.3145303726196289 sec
