@@ -3,7 +3,7 @@ from time import time
 
 
 # * Higher Order Function
-# Higher Order Function (HOC) is a function which returns another function, or accepts another function
+# Higher Order Function (HOC - Higher-Order Construct) is a function which returns another function, or accepts another function
 def greet(func):
     func()
 
