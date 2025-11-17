@@ -2,6 +2,7 @@ import random
 from random import shuffle
 import sys
 
+
 print(random)  # <module 'random' from '/usr/lib/python3.12/random.py'>
 # print(dir(random))
 # print(help(random))
