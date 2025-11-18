@@ -52,7 +52,3 @@ if check_email and check_password:
     )  # Both email and password are correct.
 else:
     print("Try again.")
-
-"""
-password is also checking for minimum 8 chars
-"""
