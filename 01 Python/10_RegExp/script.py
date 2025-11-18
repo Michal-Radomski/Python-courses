@@ -36,3 +36,23 @@ print(
 print(f"e: {e}")  # e: None
 print(f"f: {f}")  # f: <re.Match object; span=(0, 6), match='really'>
 print(f"g: {g}")  # g: None
+
+pattern2 = re.compile(r"([a-zA-Z])([a])", re.IGNORECASE | re.MULTILINE)
+print(pattern2.search(string))  # <re.Match object; span=(11, 13), match='ea'>
+
+email_pattern = re.compile(r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
+check_email = email_pattern.fullmatch("test@test.com")
+
+password_patter = re.compile(r"([a-zA-Z0-9@#$%]{8,}$)")
+check_password = password_patter.fullmatch("12345678")
+
+if check_email and check_password:
+    print(
+        "Both email and password are correct."
+    )  # Both email and password are correct.
+else:
+    print("Try again.")
+
+"""
+password is also checking for minimum 8 chars
+"""
