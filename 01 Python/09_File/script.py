@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 
-my_file = open("test.txt")
-print(my_file)  # <_io.TextIOWrapper name='test.txt' mode='r' encoding='UTF-8'>
-print(my_file.read())
+try:
+    my_file = open("test.txt")
+    print(my_file)  # <_io.TextIOWrapper name='test.txt' mode='r' encoding='UTF-8'>
+    print(my_file.read())
+except FileExistsError as err:
+    print("File doesn't exist")
+    raise err
+except IOError as err:
+    print("IO Error")
+    raise err
 
 print(
     my_file.read()
