@@ -40,3 +40,8 @@ img.thumbnail(
     (100, 50)
 )  # it will keep max. 50*50 aspect ratio, it can be like 30*50, but it won't exceed 50 pixels
 img.save("./Pokedex/thumbnailed.png", "png")
+
+# img2 = Image.open("./Pokedex/astro.png")
+# print(img2.size)  # (1684, 1602)
+# img2.thumbnail((400, 400)) # Max value, keeping aspect ratio
+# img2.save("./Pokedex/astro.png")
