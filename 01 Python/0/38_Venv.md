@@ -283,6 +283,7 @@ file by running:
 
 ```
 pip freeze > requirements.txt
+pip3 freeze > requirements.txt
 ```
 
 This will list all installed packages and their exact versions into `requirements.txt` for future use.
