@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website!</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}" />
 
     <!-- My styles + script -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <script src="static/script.js" defer></script>
   </head>
   <body>
     <h1>Hello there! This is a great website!</h1>

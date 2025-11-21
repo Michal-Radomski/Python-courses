@@ -6,16 +6,18 @@ from flask import Flask, render_template  # type: ignore
 
 
 app = Flask(__name__)
-
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+# print(__name__)  # __main__ / server
+# print(app)  # <Flask 'server'>
 
 
 # @app.route("/")
 # def hello_world():
-#     return render_template("my_index.html")
+#     return '<h1 style="text-align:center; color: blue">Hello, World!</h1>'
+
+
+@app.route("/")
+def hello_world():
+    return render_template("index.html")
 
 
 # by default 'render_template' looks in the 'templates' folder in the same directory for the given file.
