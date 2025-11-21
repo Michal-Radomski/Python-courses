@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pprint  # pretty print - used to print with appropriate spacing, for readability
 
 url = "https://news.ycombinator.com/"
 res = requests.get(url)
