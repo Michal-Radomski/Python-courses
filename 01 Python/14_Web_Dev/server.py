@@ -39,4 +39,4 @@ def blog_dog():
     "/blog/<username>/<int:age>"
 )  # if we don't specify the variable type, it will be taken as string by default.
 def user_blog(username, age):
-    return render_template("user_blog.html", name=username, age=age)
+    return render_template("user_blog.html.jinja", name=username, age=age)
