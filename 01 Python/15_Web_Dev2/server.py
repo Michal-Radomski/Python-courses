@@ -20,6 +20,7 @@ def write_to_file(data):
         subject = data["subject"]
         message = data["message"]
         file = database.write(f"\n{email},{subject},{message}")
+        print(file)
 
 
 def write_to_csv(data):
@@ -38,6 +39,7 @@ def submit_form():
     if request.method == "POST":
         try:
             data = request.form.to_dict()
+            # write_to_file(data)
             write_to_csv(data)
             return redirect("/thankyou.html")
         except:
