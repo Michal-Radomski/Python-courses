@@ -3,6 +3,8 @@
 Temp/
 notes.txt
 .test-checkpoint.ipynb/
+01 Python/15_Web_Dev2/*
+!01 Python/15_Web_Dev2/server.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
