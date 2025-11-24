@@ -2,6 +2,8 @@ from selenium import webdriver  # type: ignore
 from selenium.webdriver.common.by import By  # type: ignore
 import time
 
+# * Not Working!
+
 chrome_browser = webdriver.Chrome()
 chrome_browser.maximize_window()
 chrome_browser.get("https://demo.seleniumeasy.com/basic-first-form-demo.html")
