@@ -6,6 +6,7 @@ notes.txt
 01 Python/15_Web_Dev2/*
 !01 Python/15_Web_Dev2/server.py
 soccer.ipynb
+settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
