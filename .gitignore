@@ -8,6 +8,7 @@ notes.txt
 soccer.ipynb
 settings.py
 Materials/
+temp/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
