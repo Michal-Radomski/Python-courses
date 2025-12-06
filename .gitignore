@@ -9,6 +9,7 @@ soccer.ipynb
 settings.py
 Materials/
 temp/
+*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
