@@ -7,3 +7,5 @@ Files created during Python courses from udemy.com
 2. [Python Django](https://www.udemy.com/course/python-django-the-practical-guide)
 
 3. [Python GUI Development with Tkinter](https://www.udemy.com/course/python-gui-development-with-tkinter-build-desktop-apps)
+
+4. [REST APIs with Flask and Python in 2025](https://www.udemy.com/course/rest-api-flask-and-python)
