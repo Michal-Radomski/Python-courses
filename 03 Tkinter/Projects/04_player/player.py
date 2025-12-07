@@ -8,6 +8,7 @@ musicplayer.title("Music Player")
 musicplayer.geometry("450x350")
 
 directory = askdirectory()
+# print("directory:", directory)
 os.chdir(directory)
 songlist = os.listdir()
 playlist = tkr.Listbox(
