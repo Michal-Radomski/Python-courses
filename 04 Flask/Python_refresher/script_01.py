@@ -125,3 +125,51 @@ science = {"Bob", "Jen", "Adam", "Anne"}
 # Given these two sets of students, we can calculate those who do both art and science by using `.intersection`
 both = art.intersection(science)
 print(both)  # {'Jen', 'Bob'}
+
+s1 = {1, 3, 4, 5, 7, 8}
+s2 = {2, 3, 4, 6, 8, 9}
+
+s3 = s1.symmetric_difference(s2)
+s4 = s1.difference(s2) | s2.difference(s1)
+
+print(s3)  # {1, 2, 5, 6, 7, 9}
+print(s4)  # {1, 2, 5, 6, 7, 9}
+
+# * Booleans
+print(5 == 5)  # True
+print(5 > 5)  # False
+print(10 != 10)  # False
+# Comparisons: ==, !=, >, <, >=, <=
+
+# -- is --
+# Python also has the `is` keyword. It's a confusing keyword for now, so I don't recommend using it.
+friends = ["Rolf", "Bob"]
+abroad = ["Rolf", "Bob"]
+
+print(friends == abroad)  # True
+print(friends is abroad)  # False -> checks the memory!
+
+# * If
+day_of_week = input("What day of the week is it today? ")
+
+if day_of_week == "Monday":
+    print("Have a great start to your week!")
+elif day_of_week == "Friday":
+    print("It's ok to finish a bit early!")
+else:
+    print("Full speed ahead!")
+
+# -- Problem: user not entering what we expect --
+day_of_week = input("What day of the week is it today? ").lower()
+
+if day_of_week == "monday":
+    print("Have a great start to your week!")
+elif day_of_week == "friday":
+    print("It's ok to finish a bit early!")
+else:
+    print("Full speed ahead!")
+
+# * In keyword
+friends = ["Rolf", "Bob", "Jen"]
+print("Jen" in friends)  # True
+# * The `in` keyword works in most sequences like lists, tuples, and sets.
