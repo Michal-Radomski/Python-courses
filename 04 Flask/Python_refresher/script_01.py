@@ -65,9 +65,9 @@
 # print(f"{age_number} is equal to {months} months.")
 
 # * Lists, tuples, and sets
-l = ["Bob", "Rolf", "Anne"]  # List
-t = ("Bob", "Rolf", "Anne")  # Tuple
-s = {"Bob", "Rolf", "Anne"}  # Set
+l = ["Bob", "Rolf", "Anne"]  # * List
+t = ("Bob", "Rolf", "Anne")  # * Tuple -> immutable!
+s = {"Bob", "Rolf", "Anne"}  # * Set -> can't duplicate elems!
 
 # Access individual items in lists and tuples using the index.
 print(l[0])  # Bob
@@ -93,3 +93,35 @@ print(s)  # {'Jen', 'Anne', 'Bob', 'Rolf'}
 # Sets can't have the same element twice.
 s.add("Bob")
 print(s)  # {'Jen', 'Anne', 'Bob', 'Rolf'}
+
+# * Operations on Sets
+# -- Difference between two sets --
+friends = {"Bob", "Rolf", "Anne"}
+abroad = {"Bob", "Anne"}
+
+# local_friends = ...
+# If there are 3 friends, and 2 are abroad, that means that 1 friend is local.
+# We can easily calculate which names are in `friends` but not in `abroad` by using `.difference`
+
+local = friends.difference(abroad)
+print(local)  # {'Rolf'}
+
+print(abroad.difference(friends))  # This returns an empty set -> set()
+
+# -- Union of two sets --
+local = {"Rolf"}
+abroad = {"Bob", "Anne"}
+
+# friends = ...
+# If we have 1 local friend and 2 abroad friends, we could calculate the total friends by using `.union`
+
+friends = local.union(abroad)
+print(friends)  # {'Rolf', 'Bob', 'Anne'}
+
+# -- Intersection of two sets --
+art = {"Bob", "Jen", "Rolf", "Charlie"}
+science = {"Bob", "Jen", "Adam", "Anne"}
+
+# Given these two sets of students, we can calculate those who do both art and science by using `.intersection`
+both = art.intersection(science)
+print(both)  # {'Jen', 'Bob'}
