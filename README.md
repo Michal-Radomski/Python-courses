@@ -9,3 +9,5 @@ Files created during Python courses from udemy.com
 3. [Python GUI Development with Tkinter](https://www.udemy.com/course/python-gui-development-with-tkinter-build-desktop-apps)
 
 4. [REST APIs with Flask and Python in 2025](https://www.udemy.com/course/rest-api-flask-and-python)
+
+5. [Mastering REST APIs with FastAPI](https://www.udemy.com/course/rest-api-fastapi-python)
