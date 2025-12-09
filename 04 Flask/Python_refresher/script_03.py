@@ -173,3 +173,93 @@ print(result)  # 5
 
 another = divide(15, 0)
 print(another)  # You fool!
+
+
+# * Lambda functions in Python
+def add(x, y):
+    return x + y
+
+
+print(add(5, 7))  # 12
+
+# -- Written as a lambda --
+add = lambda x, y: x + y
+print(add(5, 7))  # 12
+
+
+def double(x):
+    return x * 2
+
+
+sequence = [1, 3, 5, 9]
+
+doubled = [
+    double(x) for x in sequence
+]  # Put the result of double(x) in a new list, for each of the values in `sequence`
+doubled = map(double, sequence)
+print(list(doubled))  # [2, 6, 10, 18]
+
+# -- Written as a lambda --
+sequence = [1, 3, 5, 9]
+doubled = map(lambda x: x * 2, sequence)
+print(list(doubled))  # [2, 6, 10, 18]
+
+# -- Important to remember --
+# Lambdas are just functions without a name.
+# They are used to return a value calculated from its parameters.
+# Almost always single-line, so don't do anything complicated in them.
+# Very often better to just define a function and give it a proper name.
+
+# * Dictionary comprehensions
+users = [
+    (0, "Bob", "password"),
+    (1, "Rolf", "bob123"),
+    (2, "Jose", "longp4assword"),
+    (3, "username", "1234"),
+]
+
+username_mapping = {user[1]: user for user in users}
+userid_mapping = {user[0]: user for user in users}
+print(
+    username_mapping
+)  # {'Bob': (0, 'Bob', 'password'), 'Rolf': (1, 'Rolf', 'bob123'), 'Jose': (2, 'Jose', 'longp4assword'), 'username': (3, 'username', '1234')}
+print(username_mapping["Bob"])  # (0, "Bob", "password")
+
+# -- Can be useful to log in for example --
+username_input = input("Enter your username: ")
+password_input = input("Enter your password: ")
+
+_, username, password = username_mapping[username_input]
+
+if password_input == password:
+    print("Your details are correct!")
+else:
+    print("Your details are incorrect.")
+
+# If we didn't use the mapping, the code would require us to loop over all users.
+# Shown on the side, pause the video if you want to read it thoroughly.
+
+# The dictionary must contain three keys: 'name', 'school', and 'grades'.
+# The values for each must be 'Jose', 'Computing', and a tuple with the values 66, 77, and 88.
+student = {"name": "Jose", "school": "Computing", "grades": (66, 77, 88)}
+
+
+# Assume the argument, data, is a dictionary.
+# Modify the grades variable so it accesses the 'grades' key of the data dictionary.
+def average_grade(data):
+    grades = data["grades"]
+    return sum(grades) / len(grades)
+
+
+# Implement the function below
+# Given a list of students (a list of dictionaries), calculate the average grade received on an exam, for the entire class
+# You must add all the grades of all the students together
+# You must also count how many grades there are in total in the entire list
+def average_grade_all_students(student_list):
+    total = 0
+    count = 0
+    for student in student_list:
+        total = total + sum(student["grades"])
+        count = count + len(student["grades"])
+
+    return total / count
