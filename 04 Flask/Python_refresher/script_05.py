@@ -1,4 +1,4 @@
-# Type Hinting
+# Type Hinting -> #* Python 3.5+
 def list_avg(sequence: list) -> float:
     return sum(sequence) / len(sequence)
 
