@@ -1,8 +1,17 @@
-from flask import Flask, request  # type: ignore
+from flask import Flask, request, send_from_directory  # type: ignore
 
 app = Flask(__name__)
+# print("app:", app) # <Flask 'app'>
 
 stores = [{"name": "My Store", "items": [{"name": "Chair", "price": 15.99}]}]
+
+
+# Serve the favicon.svg from the 'static' folder
+@app.route("/favicon.ico")
+def favicon():
+    return send_from_directory(
+        app.static_folder, "favicon.svg", mimetype="image/svg+xml"
+    )
 
 
 @app.get("/store")

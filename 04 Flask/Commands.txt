@@ -1,0 +1,2 @@
+Run flask app: python3 -m flask --app <file_name.py> run --debug
+Run flask app: flask --app <file_name.py> run
