@@ -2,6 +2,7 @@
 from flask import Flask, jsonify  # type: ignore[import-not-found]
 from flask_smorest import Api  # type: ignore[import-not-found]
 from flask_jwt_extended import JWTManager  # type: ignore[import-not-found]
+from flask_migrate import Migrate  # type: ignore[import-not-found]
 
 from db import db
 from blocklist import BLOCKLIST
@@ -26,6 +27,8 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["PROPAGATE_EXCEPTIONS"] = True
     db.init_app(app)
+    migrate = Migrate(app, db)
+    # print("migrate:", migrate) # migrate: <flask_migrate.Migrate object at 0x750125739ee0>
     api = Api(app)
 
     # secret = secrets.SystemRandom().getrandbits(128)
