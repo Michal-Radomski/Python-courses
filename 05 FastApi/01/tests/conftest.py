@@ -1,8 +1,13 @@
+import os
 from typing import AsyncGenerator, Generator
 
 import pytest  # type: ignore[import-not-found]
 from fastapi.testclient import TestClient  # type: ignore[import-not-found]
 from httpx import ASGITransport, AsyncClient  # type: ignore[import-not-found]
+
+os.environ["ENV_STATE"] = "test"
+
+
 from main import app
 from routers.posts import comments_table, post_table
 
