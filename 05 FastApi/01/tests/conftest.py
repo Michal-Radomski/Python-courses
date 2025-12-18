@@ -8,8 +8,9 @@ from httpx import ASGITransport, AsyncClient  # type: ignore[import-not-found]
 os.environ["ENV_STATE"] = "test"
 
 
+# from routers.posts import comments_table, post_table
+from database import database
 from main import app
-from routers.posts import comments_table, post_table
 
 
 @pytest.fixture(scope="session")
@@ -22,11 +23,16 @@ def client() -> Generator:
     yield TestClient(app)
 
 
+# @pytest.fixture(autouse=True)
+# async def db() -> AsyncGenerator:
+#     post_table.clear()
+#     comments_table.clear()
+#     yield
 @pytest.fixture(autouse=True)
 async def db() -> AsyncGenerator:
-    post_table.clear()
-    comments_table.clear()
+    await database.connect()
     yield
+    await database.disconnect()
 
 
 @pytest.fixture()
