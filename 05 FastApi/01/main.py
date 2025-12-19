@@ -5,6 +5,7 @@ from database import database
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from logging_conf import configure_logging
 from routers.posts import router as posts_router
 
 # app = FastAPI()
@@ -20,6 +21,7 @@ from routers.posts import router as posts_router
 # * V2
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    configure_logging()
     await database.connect()
     yield
     await database.disconnect()

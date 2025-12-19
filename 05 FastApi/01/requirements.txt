@@ -20,3 +20,7 @@ websockets==15.0.1
 pydantic-settings
 sqlalchemy
 databases[aiosqlite]
+rich
+asgi-correlation-id
+python-json-logger
+logtail-python
