@@ -24,7 +24,7 @@ class EmailObfuscationFilter(logging.Filter):
 
 handlers = ["default", "rotating_file"]
 if config.ENV_STATE == "prod":
-    handlers = ["default", "rotating_file", "logtail"]
+    handlers = ["default", "rotating_file", "logtail"]  # * logtail not configured!
 
 
 def configure_logging() -> None:
@@ -33,7 +33,7 @@ def configure_logging() -> None:
             "version": 1,
             "disable_existing_loggers": False,
             "filters": {
-                "correlation_id": {
+                "correlation_id": {  # * Not Working!
                     "()": "asgi_correlation_id.CorrelationIdFilter",
                     "uuid_length": 8 if isinstance(config, DevConfig) else 32,
                     "default_value": "-",
