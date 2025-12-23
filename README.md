@@ -11,3 +11,5 @@ Files created during Python courses from udemy.com
 4. [REST APIs with Flask and Python in 2025](https://www.udemy.com/course/rest-api-flask-and-python)
 
 5. [Mastering REST APIs with FastAPI](https://www.udemy.com/course/rest-api-fastapi-python)
+
+6. [From Zero to Async: A Complete Guide to AsyncIO in Python](https://www.udemy.com/course/from-zero-to-async-a-complete-guide-to-asyncio-in-python)
