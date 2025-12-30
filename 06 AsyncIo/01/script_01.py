@@ -109,3 +109,63 @@ print(f"The square of 5 is: {result}")  # The square of 5 is: 8
 
 # def get_current_year():
 #     return datetime.now().year
+
+
+# * Classes
+# Example 1: Defining and Instantiating a Class
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        return f"{self.name} says {self.sound}"
+
+
+# Creating an instance of Animal
+dog = Animal("Dog", "Woof")
+print(dog.make_sound())  # Dog says Woof
+
+
+# Example 2: Inheritance
+class Bird(Animal):
+    def __init__(self, name, sound, can_fly):
+        super().__init__(name, sound)
+        self.can_fly = can_fly
+
+    def fly(self):
+        return "flies" if self.can_fly else "can't fly"
+
+
+# Creating an instance of Bird
+sparrow = Bird("Sparrow", "Tweet", True)
+print(f"{sparrow.make_sound()} and {sparrow.fly()}.")  # Sparrow says Tweet and flies.
+
+
+# Example 3: Class Method and Static Method
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    @classmethod
+    def square(cls, side_length):
+        return cls(side_length, side_length)
+
+    @staticmethod
+    def is_square(width, height):
+        return width == height
+
+
+# Creating instances of Rectangle
+rectangle = Rectangle(10, 20)
+square = Rectangle.square(10)
+
+print(f"Rectangle area: {rectangle.area()}")  # Rectangle area: 200
+print(f"Square area: {square.area()}")  # Square area: 100
+print(
+    f"Is the rectangle a square? {'Yes' if Rectangle.is_square(rectangle.width, rectangle.height) else 'No'}"  # Is the rectangle a square? No
+)
