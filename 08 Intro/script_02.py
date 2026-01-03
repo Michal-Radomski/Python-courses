@@ -38,3 +38,7 @@ for x in data.values():
 # Ford
 # Aston Martin
 # 1964
+
+# * Functions
+# Parameter is the variable for function
+# Arguments are the data for parameters
