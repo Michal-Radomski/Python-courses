@@ -13,3 +13,7 @@ Files created during Python courses from udemy.com
 5. [Mastering REST APIs with FastAPI](https://www.udemy.com/course/rest-api-fastapi-python)
 
 6. [From Zero to Async: A Complete Guide to AsyncIO in Python](https://www.udemy.com/course/from-zero-to-async-a-complete-guide-to-asyncio-in-python)
+
+7. [Web Scraping Financial News using Python 3](https://www.udemy.com/course/web-scraping-financial-news-using-python-3)
+
+8. [Python Intro](https://www.udemy.com/course/python-masterclass-python-for-everything)
