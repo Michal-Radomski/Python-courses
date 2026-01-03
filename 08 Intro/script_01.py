@@ -61,3 +61,25 @@ print(cmath.sin(z))  # (3.8537-27.0168j)
 print(cmath.phase(z))  # 0.9273 radians (angle)
 print(cmath.polar(z))  # (5.0, 0.9273) - (magnitude, angle)
 print(cmath.rect(5, 0.9273))  # Converts back to (3+4j)
+
+# Type conversion
+my_new_amount = int(amount)
+print(type(my_new_amount))  # <class 'int'>
+
+
+# my_new_age = float(car_model_name)
+# print(type(my_new_age)) #* Error
+print(type(car_model_name))  # <class 'complex'>
+
+print(int(30.30))  # 30
+
+my_name = "Mich"
+score = 100
+isAdult = True
+complex_number = 1j
+percentage_wining = 60.5
+
+# * String modification
+paragraph = "  I have an awesome Aston Martin in my garage  "
+# upper, lower, strip, replace
+print(paragraph.strip())  # *I have an awesome Aston Martin in my garage
