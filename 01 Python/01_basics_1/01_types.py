@@ -8,7 +8,7 @@
 # tuple
 # set
 # dict
-# Non
+# None
 
 # * Number and float
 print(type(2 + 4))
