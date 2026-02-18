@@ -55,3 +55,34 @@ This table covers the majority of frequently used keywords and their closest JS/
 [8](https://stackoverflow.com/questions/9642087/is-it-possible-to-get-a-list-of-keywords-in-python)
 [9](https://labex.io/tutorials/python-understand-keywords-and-built-in-identifiers-in-python-585777)
 [10](https://www.scholarhat.com/tutorial/python/keywords-in-python)
+
+JavaScript and TypeScript have no direct `pass` keyword like Python, since block syntax doesn't require indentation or
+content—empty blocks `{}` serve the same purpose as a no-op placeholder.
+[stackoverflow](https://stackoverflow.com/questions/33383840/is-there-a-javascript-equivalent-of-the-python-pass-statement-that-does-nothing)
+
+## Common Equivalents
+
+- **Empty block**: Use `{}` in functions, loops, conditionals, or `catch` blocks.
+  ```javascript
+  if (condition) {
+    // pass equivalent - does nothing
+  }
+  function noop() {} // Empty function body
+  ```
+- **Comments**: Add `// pass` for readability in empty blocks.
+  [stackoverflow](https://stackoverflow.com/questions/33383840/is-there-a-javascript-equivalent-of-the-python-pass-statement-that-does-nothing)
+
+## Examples
+
+```javascript
+// Python: def func(): pass
+function func() {} // JS/TS equivalent
+
+// Python: try: risky() except: pass
+try {
+  risky();
+} catch {} // Empty catch block[web:12]
+```
+
+This works identically in both JS and TS, maintaining structure without executing code.
+[webdevtutor](https://www.webdevtutor.net/blog/typescript-equivalent-of-pass)
