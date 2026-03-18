@@ -17,5 +17,3 @@ Files created during Python courses from udemy.com
 7. [Web Scraping Financial News using Python 3](https://www.udemy.com/course/web-scraping-financial-news-using-python-3)
 
 8. [Python Intro](https://www.udemy.com/course/python-masterclass-python-for-everything)
-
-9. [Astronomy Research Data Analysis with Python](https://www.udemy.com/course/astronomy-research-data-analysis-with-python)
