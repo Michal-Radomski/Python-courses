@@ -1,0 +1,7 @@
+ls -l /dev/gpiochip*
+ls /proc/device-tree/soc (output: gpio@7e200000)
+
+sudo gpiodetect
+sudo gpioinfo
+
+pinout
