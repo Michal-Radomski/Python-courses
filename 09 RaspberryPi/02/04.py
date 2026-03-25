@@ -1,5 +1,5 @@
 # Working with DHT11 sensor code (Not Tested!)
-# Todo: add GPIO.cleanup()
+
 # python3 -m venv ~/myproject
 # source ~/myproject/bin/activate
 # pip3 install Adafruit_DHT

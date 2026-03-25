@@ -12,6 +12,7 @@ temp/
 *.db
 data/
 05_cloud.py
+06_email.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
