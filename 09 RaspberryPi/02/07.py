@@ -26,7 +26,7 @@ try:
         x = GPIO.input(21)
         print("GPIO 21 state:", x)
 
-        if x == 0:  # motion detected (PIR pulls low)
+        if x == 1:  # motion detected (PIR pulls low)
             try:
                 s.sendmail(sender, recipient, message)
                 print("📧 Email sent!")
