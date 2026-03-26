@@ -1,3 +1,6 @@
+# Not Tested!
+# Sending Email Alerts using SMTP Protocol
+
 import smtplib
 import time
 

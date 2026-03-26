@@ -1,3 +1,4 @@
+# Not Tested!
 # Traffic Lights Control System Code
 # Todo: add GPIO.cleanup()
 

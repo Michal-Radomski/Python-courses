@@ -1,3 +1,4 @@
+# Not Tested!
 # Working with DHT11 sensor code (Not Tested!)
 
 # python3 -m venv ~/myproject

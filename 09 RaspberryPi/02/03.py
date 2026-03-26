@@ -1,3 +1,4 @@
+# Not Tested!
 # Working with Buzzer
 # Todo: add GPIO.cleanup()
 
