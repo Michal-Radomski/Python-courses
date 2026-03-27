@@ -19,3 +19,5 @@ Files created during Python courses from udemy.com
 8. [Python Intro](https://www.udemy.com/course/python-masterclass-python-for-everything)
 
 9. [The Ultimate Guide to IoT with Raspberry Pi and Python](https://www.udemy.com/course/internet-of-things-using-raspberry-pi-and-python-2023)
+
+10. [Python Automation Testing With Pytest](https://www.udemy.com/course/python-automation-pytest)
