@@ -15,6 +15,7 @@ data/
 06_email.py
 08_twilio.py
 09_aws.py
+11_openweathermap.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
