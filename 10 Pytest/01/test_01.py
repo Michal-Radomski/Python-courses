@@ -1,6 +1,6 @@
-# run: pytest ./01
-# run: pytest
-# run: pytest ./01/test_01.py
+# run: pytest ./01 -v
+# run: pytest -v
+# run: pytest ./01/test_01.py -v
 
 
 def test_a1():
