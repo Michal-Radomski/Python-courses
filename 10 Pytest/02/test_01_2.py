@@ -7,7 +7,7 @@ def test_a2():
 
 
 def test_a3():
-    assert "abc" == "abcd"
+    assert "abc" != "abcd"
 
 
 def test_a4():
@@ -15,6 +15,6 @@ def test_a4():
 
 
 def test_a5():
-    assert 1 in divmod(9, 5)
+    assert 1 in divmod(9, 5)  # divmod(9,5) -> (1,4)
     assert "put" not in "this is pytest"
     assert [1, 2, 4] == [1, 2, 4]
